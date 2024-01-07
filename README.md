@@ -1,16 +1,16 @@
-## Go Rest DDD V2
+## Go Sagara
 
 ### Run App With Docker
 ```sh
-    git clone git@github.com:geekbim/Sagara.git
-    cd Sagara
+    git clone git@github.com:geekbim/Go-Sagara.git
+    cd Go-Sagara
     docker-compose up
 ```
 
 ### Run App Without Docker
 ```sh
-    git clone git@github.com:geekbim/Sagara.git
-    cd Sagara
+    git clone git@github.com:geekbim/Go-Sagara.git
+    cd Go-Sagara
     cp .env.example .env
     go mod tidy
     sh run-service.sh
@@ -33,9 +33,4 @@
 ### Docs Swagger
 ```sh
     http://localhost:8080/docs/index.html
-```
-
-### Docs postman
-```sh
-    https://documenter.getpostman.com/view/1850032/Uz5CLJ9Q
 ```
