@@ -1,0 +1,1 @@
+TRUNCATE data_objects;

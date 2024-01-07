@@ -1,0 +1,186 @@
+definitions:
+  request.CreateOrder:
+    properties:
+      capacity_employee:
+        type: integer
+      date_end:
+        type: string
+      date_start:
+        type: string
+      other:
+        type: string
+      payment:
+        type: string
+      pic_name:
+        type: string
+      requirement:
+        type: string
+    type: object
+  request.LoginUser:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  request.RegisterUser:
+    properties:
+      company_address:
+        type: string
+      company_name:
+        type: string
+      email:
+        type: string
+      information:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      position:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /apis/v1/office:
+    get:
+      consumes:
+      - application/json
+      description: API for get list offices
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Region ID
+        in: query
+        name: region_id
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: List Office
+      tags:
+      - Office
+  /apis/v1/office/{id}:
+    get:
+      consumes:
+      - application/json
+      description: API for get detail office
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Office ID
+        in: path
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Detail Office
+      tags:
+      - Office
+  /apis/v1/order:
+    post:
+      consumes:
+      - application/json
+      description: API for create order
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Request Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/request.CreateOrder'
+      produces:
+      - application/json
+      responses: {}
+      summary: Create Order
+      tags:
+      - Order
+  /apis/v1/region:
+    get:
+      consumes:
+      - application/json
+      description: API for get list regions
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Keyword
+        in: query
+        name: key
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: List Region
+      tags:
+      - Region
+  /apis/v1/user/login:
+    post:
+      consumes:
+      - application/json
+      description: API for login
+      parameters:
+      - description: Request Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/request.LoginUser'
+      produces:
+      - application/json
+      responses: {}
+      summary: Login
+      tags:
+      - User
+  /apis/v1/user/register:
+    post:
+      consumes:
+      - application/json
+      description: API for register
+      parameters:
+      - description: Request Payload
+        in: body
+        name: Payload
+        required: true
+        schema:
+          $ref: '#/definitions/request.RegisterUser'
+      produces:
+      - application/json
+      responses: {}
+      summary: Register
+      tags:
+      - User
+swagger: "2.0"

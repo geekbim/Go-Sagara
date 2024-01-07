@@ -1,0 +1,1 @@
+TRUNCATE indonesia_provinces;
