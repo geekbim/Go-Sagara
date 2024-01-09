@@ -23,7 +23,8 @@ import (
 //	@Param			Authorization			header	string		true	"Authorization"
 //	@Param			page					query	string		false	"Page"
 //	@Param			region_id				query	string		false	"Region ID"
-//	@Param			limit					query	string		false	"Limit"
+//	@Param			limit					query	int			false	"Limit"
+//	@Param			page					query	int			false	"Page"
 //	@Router			/apis/v1/office [get]
 func (handler *officeHandler) GetOffice(w http.ResponseWriter, r *http.Request) {
 	var (

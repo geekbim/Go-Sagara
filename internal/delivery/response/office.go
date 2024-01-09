@@ -55,7 +55,7 @@ func MapOfficeDomainToResponseList(office *entity.Office) *OfficeList {
 		Id:   office.Id.String(),
 		Name: office.Name,
 		Image: Image{
-			Path: fmt.Sprintf("%s%s", cfg.Port, office.Image.Path),
+			Path: fmt.Sprintf("http://%s%s", cfg.Port, office.Image.Path),
 		},
 		AdditionalData: OfficeAdditionalData{
 			Capacity: office.AdditionalData.Capacity,
@@ -86,7 +86,7 @@ func MapOfficeDomainToResponse(office *entity.Office) *Office {
 		RoomType:    office.RoomType,
 		Description: office.Description,
 		Image: Image{
-			Path: fmt.Sprintf("%s%s", cfg.Port, office.Image.Path),
+			Path: fmt.Sprintf("http://%s%s", cfg.Port, office.Image.Path),
 		},
 		AdditionalData: OfficeAdditionalData{
 			Capacity: office.AdditionalData.Capacity,
@@ -96,12 +96,12 @@ func MapOfficeDomainToResponse(office *entity.Office) *Office {
 				Title:       office.AdditionalData.SpecialOffer.Title,
 				Description: office.AdditionalData.SpecialOffer.Description,
 				Image: &Image{
-					Path: fmt.Sprintf("%s%s", cfg.Port, office.AdditionalData.SpecialOffer.Image.Path),
+					Path: fmt.Sprintf("http://%s%s", cfg.Port, office.AdditionalData.SpecialOffer.Image.Path),
 				},
 			},
 			SpecialPrice: &SpecialPriceAdditionalData{
 				Image: &Image{
-					Path: fmt.Sprintf("%s%s", cfg.Port, office.AdditionalData.SpecialPrice.Image.Path),
+					Path: fmt.Sprintf("http://%s%s", cfg.Port, office.AdditionalData.SpecialPrice.Image.Path),
 				},
 			},
 		},
